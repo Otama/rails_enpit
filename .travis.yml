@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+- 2.2.5
+- 1.9.3
+- jruby-19mode
+- rbx-2
+deploy:
+  provider: heroku
+  api_key:
+    secure: Che2007LIakXVgw2hnpthsgle69HVyTOMr0yZO/RQvc6F/zJ86znJHLDGdSPBRLvB+zZKQp21b/eD3T8jOUgbka8QyKchEP2L8kW6Nhq1tJUjbw5dAAwy5wOIYDpoSbIQXRnAlX9noO6ngWi1B33M54NoZrOsVqw0dcayLyqFVOwt4zWonz/85ID3WVTskk/whuYx/q5LDzPNHjKQOx1RIfYUTIistNdnFsj5rv1jv85zNzTyQxThDOF80hcHKYqpBYbjctauLQitVSec/gedgeatGwLfzCLiQcSPy2D69JQE2CoSj9sgEXZPxpCdroEXqp3uN6TlM9V9MGcJcv6qUMlvzYo3yQynU2GiyFdlUZqGl/wWhXxFEzYwS9jFCxQyKFQYRWiiowahSxRuhCVuHTbqVSe96YpU/klwCj3VB9y++HhykyLKXy7UU8BS6RnCDxuBQA4ITl+aWQh49rlk0KiuqXeYwSTvyDJahMBWDKVwwMB6++OKAVHviN78yEtMRZC6KzEUaN5ewSvHt0OT06Bx81+lGY/x+xhH+KSuze6NiJcwpl+92TSzqNUn+Qloy4YUZi2QoZvCupBC3OtKqwFjfzONmniQXcgJCOe3G9qqc3erwIjkVqqhajvD0uFUQ0y6atuVeEZcfnXKXbLzm/VWLlFD1ekQJ8f5ZplADo=
+  app: agile-mountain-53524
+  on:
+    repo: Otama/rails_enpit
+addons:
+  postgreasql: "9.3"
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgress
+  - cp config/database.yml.travis config/database.yml
+  - bundle exec rake db:migrate RAILS_ENV=test
