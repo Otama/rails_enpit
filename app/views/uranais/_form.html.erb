@@ -1,0 +1,25 @@
+<%= form_for(@uranai) do |f| %>
+  <% if @uranai.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@uranai.errors.count, "error") %> prohibited this uranai from being saved:</h2>
+
+      <ul>
+      <% @uranai.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :luck %><br>
+    <%= f.text_field :luck %>
+  </div>
+  <div class="field">
+    <%= f.label :detail %><br>
+    <%= f.text_field :detail %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

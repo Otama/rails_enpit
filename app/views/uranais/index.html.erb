@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Uranais</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Luck</th>
+      <th>Detail</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uranais.each do |uranai| %>
+      <tr>
+        <td><%= uranai.luck %></td>
+        <td><%= uranai.detail %></td>
+        <td><%= link_to 'Show', uranai %></td>
+        <td><%= link_to 'Edit', edit_uranai_path(uranai) %></td>
+        <td><%= link_to 'Destroy', uranai, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Uranai', new_uranai_path %>
