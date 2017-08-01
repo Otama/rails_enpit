@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'games/new'
+
   resources :uranais
   resources :users
   resources :books
