@@ -1,0 +1,20 @@
+<h1>オンライン対戦 じゃんけんゲーム</h1>
+
+<%= form_for @janken do |f| %>
+<br>
+<br>
+<br>
+  <div class="field">
+    <%= f.label 'なまえ（必ず毎回入力する必要あり）' %><br>
+    <%= f.text_field :name %>
+  </div>
+  <br>
+  <div class="action">
+    <%= submit_tag 'グー' %>
+    <%= submit_tag 'チョキ' %>
+    <%= submit_tag 'パー' %>
+  </div>
+  <br>
+  <br>
+  <br>
+<% end %>

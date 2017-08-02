@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :jankens
+
   resources :games
   resources :uranais
   resources :users
