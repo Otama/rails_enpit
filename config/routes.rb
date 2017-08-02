@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :jankens
-  get 'games/new'
 
+  resources :games
   resources :uranais
   resources :users
   resources :books
