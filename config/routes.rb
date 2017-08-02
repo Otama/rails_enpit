@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :jankens
-
+  get '/janken/result'
   resources :games
   resources :uranais
   resources :users
