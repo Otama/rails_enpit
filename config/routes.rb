@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :jankens
   get 'games/new'
 
   resources :uranais

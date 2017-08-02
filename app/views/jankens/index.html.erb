@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<%
+=begin
+  <div class="field">
+    <%= f.label :name, "なまえ" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= button_to 'グー', new_janken_path %>
+  <%= button_to 'チョキ', new_janken_path %>
+  <%= button_to 'パー', new_janken_path %>
+<%
+=end
+%>
+
+
+
+<h2>じゃんけんデータベース</h2>
+誰が勝ったかは以下のデータベースから自ら判断すること。
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>出した手</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jankens.each do |janken| %>
+      <tr>
+        <td><%= janken.name %></td>
+        <td><%= janken.hand %></td>
+        <td><%= link_to 'Show', janken %></td>
+        <td><%= link_to 'Edit', edit_janken_path(janken) %></td>
+        <td><%= link_to 'Destroy', janken, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Janken', new_janken_path %>
