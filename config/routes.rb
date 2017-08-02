@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  get '/jankens/result' => 'jankens#result'
   resources :jankens
-  get '/janken/result'
   resources :games
   resources :uranais
   resources :users
