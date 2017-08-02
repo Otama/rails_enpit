@@ -4,7 +4,7 @@
 	<title>welcome</title>
 </head>
 <body>
-<!-- //最上階	-->
+<!-- //最上階 1 1	-->
 <div>
 <p>
   The time is now: <%= Time.now %>
@@ -18,18 +18,18 @@
 
 </div>
 <div  style="text-align:center">
-	  <button  onclick="href='  '">戦績</button>
+	  <img src="http://konomachi.colle-ction.com/wp-content/uploads/2012/12/janken.png" width="128" height="128" />
+<br/>
 	  <button　onclick="href='  '">ログイン</button>
-      <button　onclick="href='  '">紹介</button>
+          <!--<button onclick="href='new_janken_path'">じゃんけんゲーム</button>-->
+	  <%= link_to 'じゃんけんゲーム', new_janken_path %>
+<button　onclick="href='  '">紹介</button>
 
 </div>
 
-<%= link_to 'じゃんけんゲーム', new_janken_path %>
-
-
 <!-- //最下階 -->
 <div>
-<p>Team5,the project from 2017/07/26.</p>
+<p align="right">Team5,the project from 2017/07/26.</p>
 </div>
 
 </body>
