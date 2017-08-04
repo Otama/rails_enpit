@@ -32,6 +32,10 @@ class JankensController < ApplicationController
 
     respond_to do |format|
       if @janken.save
+
+	# 相手の手を取得
+	@enemy = @janken.enemy
+
         format.html { render :show, notice: 'Janken was successfully created.' }
         format.json { render :index, status: :created, location: @janken }
       else
