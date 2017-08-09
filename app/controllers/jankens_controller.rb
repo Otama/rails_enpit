@@ -36,6 +36,8 @@ class JankensController < ApplicationController
 	# 対戦相手を取得
 	@enemy = @janken.previous if @janken.previous
 
+	@result = @janken.judge
+
         format.html { render :result, notice: 'Janken was successfully created.' }
         format.json { render :index, status: :created, location: @janken }
       else
