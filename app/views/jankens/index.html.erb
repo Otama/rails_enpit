@@ -18,7 +18,6 @@
 
 <h2>じゃんけんデータベース</h2>
 誰が勝ったかは以下のデータベースから自ら判断すること。
-
 <table>
   <thead>
     <tr>
@@ -33,14 +32,11 @@
       <tr>
         <td><%= janken.name %></td>
         <td><%= janken.hand %></td>
-        <td><%= link_to 'Show', janken %></td>
-        <td><%= link_to 'Edit', edit_janken_path(janken) %></td>
-        <td><%= link_to 'Destroy', janken, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to '削除', janken, method: :delete , data: { confirm: 'Are you sure?' }, class: 'btn btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Janken', new_janken_path %>
