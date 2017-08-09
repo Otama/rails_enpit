@@ -10,17 +10,17 @@
   <%= @janken.hand %>
 </p>
 <p>
-  <strong>相手の名前</strong>
+  <strong>対戦者</strong>
   <%= @enemy.name %>
 </p>
 
 <p>
-  <strong>相手の手</strong>
+  <strong><%= @enemy.name %>の手</strong>
   <%= @enemy.hand %>
 </p>
 <p>
-  <strong>Room:</strong>
-  <%= @janken.room %>
+  <strong>結果</strong>
+  <%= @result %>
 </p>
 
 <%= link_to 'トップページへ', root_path %>

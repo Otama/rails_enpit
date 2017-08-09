@@ -16,25 +16,27 @@ class Janken < ActiveRecord::Base
 
     def judge
 
-	if @janken.hand == "グー" then
-	    if @enemy.hand == "グー" then
+	enemy = self.previous if self.previous
+
+	if self.hand == "グー" then
+	    if enemy.hand == "グー" then
 		@result = "あいこ"
 	    elsif @enemy.hand == "チョキ" then
 		@result = "勝ち"
 
-	    elsif @enemy.hand == "パー" 
+	    elsif enemy.hand == "パー" 
 
 		@result = "負け"
 	    else
 
 	    end
-	elsif @janken.hand == "チョキ" then
-	     if @enemy.hand == "グー" then
+	elsif self.hand == "チョキ" then
+	     if enemy.hand == "グー" then
 		@result = "負け"
-	    elsif @enemy.hand == "チョキ" then
+	    elsif enemy.hand == "チョキ" then
 		@result = "あいこ"
 
-	    elsif @enemy.hand == "パー" 
+	    elsif enemy.hand == "パー" 
 
 		@result = "勝ち"
 	    else
@@ -42,13 +44,13 @@ class Janken < ActiveRecord::Base
 
 	    end
 
-	elsif @janken.hand == "パー" 
-	     if @enemy.hand == "グー" then
+	elsif self.hand == "パー" 
+	     if enemy.hand == "グー" then
 		@result = "勝ち"
-	    elsif @enemy.hand == "チョキ" then
+	    elsif enemy.hand == "チョキ" then
 		@result = "負け"
 
-	    elsif @enemy.hand == "パー" 
+	    elsif enemy.hand == "パー" 
 
 		@result = "あいこ"
 	    else
@@ -60,5 +62,7 @@ class Janken < ActiveRecord::Base
 	    @result = "エラー"
 
 	end
+	
+	return @result
     end
 end
