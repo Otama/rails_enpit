@@ -60,4 +60,5 @@ class Janken < ActiveRecord::Base
 	    @result = "エラー"
 
 	end
+    end
 end
