@@ -5,11 +5,6 @@
 </head>
 <body>
 <!-- //最上階-->
-<div style="text-align:left">
-<p>
-  The time is now: <%= Time.now %>
-</p>
-</div>
 
 
 <!-- //中 -->
@@ -20,13 +15,13 @@
 <div  style="text-align:center">
 	  <img src="http://konomachi.colle-ction.com/wp-content/uploads/2012/12/janken.png" width="128" height="128" />
 <br/>
-	  
+
           <!--<button onclick="href='new_janken_path'">じゃんけんゲーム</button>-->
-	  <%= link_to 'じゃんけんゲーム', new_janken_path %>
+	  <%= button_to 'じゃんけんゲーム', new_janken_path, class: 'btn btn-primary' %>
 <br/>
 	<button　onclick="href='  '">ログイン</button>
-	<%= link_to '掲示板',posts_path %>
-	<%= link_to '成員紹介','member/index'%>
+	<%= button_to '掲示板', posts_path, class: 'btn btn-default' %>
+	<%= button_to '成員紹介','member/index', class: 'btn btn-default'%>
 
 </div>
 
