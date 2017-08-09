@@ -13,4 +13,51 @@ class Janken < ActiveRecord::Base
 
         return hand
     end
+
+    def judge
+
+	if @janken.hand == "グー" then
+	    if @enemy.hand == "グー" then
+		@result = "あいこ"
+	    elsif @enemy.hand == "チョキ" then
+		@result = "勝ち"
+
+	    elsif @enemy.hand == "パー" 
+
+		@result = "負け"
+	    else
+
+	    end
+	elsif @janken.hand == "チョキ" then
+	     if @enemy.hand == "グー" then
+		@result = "負け"
+	    elsif @enemy.hand == "チョキ" then
+		@result = "あいこ"
+
+	    elsif @enemy.hand == "パー" 
+
+		@result = "勝ち"
+	    else
+		@result = "エラー"
+
+	    end
+
+	elsif @janken.hand == "パー" 
+	     if @enemy.hand == "グー" then
+		@result = "勝ち"
+	    elsif @enemy.hand == "チョキ" then
+		@result = "負け"
+
+	    elsif @enemy.hand == "パー" 
+
+		@result = "あいこ"
+	    else
+		@result = "エラー"
+
+	    end
+
+	else
+	    @result = "エラー"
+
+	end
 end
