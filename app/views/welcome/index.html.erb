@@ -17,11 +17,11 @@
 <br/>
 
           <!--<button onclick="href='new_janken_path'">じゃんけんゲーム</button>-->
-	  <%= button_to 'じゃんけんゲーム', new_janken_path, class: 'btn btn-primary' %>
+	  <%= button_to 'じゃんけんゲーム', new_janken_path, {:method => :get, class: 'btn btn-primary'} %>
 <br/>
 	<button　onclick="href='  '">ログイン</button>
-	<%= button_to '掲示板', posts_path, class: 'btn btn-default' %>
-	<%= button_to '成員紹介','welcome/member', class: 'btn btn-default'%>
+	<%= button_to '掲示板', posts_path, {:method => :get, class: 'btn btn-default'} %>
+	<%= button_to '成員紹介','welcome/member', {:method => :get, class: 'btn btn-default'}%>
 
 </div>
 

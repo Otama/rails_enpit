@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div style="text-align:center">
-<p >
+<p>
   <strong>名前：</strong>
   <%= @post.name %>
 </p>
@@ -11,17 +11,17 @@
   <%= @post.title %>
 </p>
 
-<p >
+<p>
   <strong>内容：</strong>
   <%= @post.content %>
 </p>
 </div>
 <h2>記録</h2>
-  <%= render @post.comment %>
-  <p>
-   
+<%#= render @post.comment %>
+</p>
+
 <h2>コメント</h2>
-  <%= render 'comments/form'%>
+<%#= render 'comments/form' %> 
 
 <%= link_to 'Edit Post', edit_post_path(@post) %> |
 <%= link_to 'Back to Posts', posts_path %>
